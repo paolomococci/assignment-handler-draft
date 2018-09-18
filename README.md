@@ -1,2 +1,2 @@
 # assignment-handler-draft
-Draft of RESTful web service
+Draft of the RESTful web service in the kotlin programming language
