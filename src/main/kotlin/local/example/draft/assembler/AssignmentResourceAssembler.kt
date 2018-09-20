@@ -32,7 +32,7 @@ class AssignmentResourceAssembler : ResourceAssembler<Assignment, Resource<Assig
     override fun toResource(assignment: Assignment): Resource<Assignment> {
         val resource = Resource(assignment,
                 linkTo(methodOn(AssignmentRestController::class.java).read(assignment.id)!!).withSelfRel(),
-                linkTo(methodOn(AssignmentRestController::class.java).readAll()!!).withRel("assignment"))
+                linkTo(methodOn(AssignmentRestController::class.java).readAll()!!).withRel("assignments"))
         if (assignment.status === Status.IN_PROGRESS) {
             resource.add(linkTo(methodOn(AssignmentRestController::class.java).cancel(assignment.id)).withRel("cancel"))
             resource.add(linkTo(methodOn(AssignmentRestController::class.java).complete(assignment.id)).withRel("complete"))
